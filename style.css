@@ -1,14 +1,24 @@
-.banner {
-  text-align: center;
-}
-
-.search-results {
+.user-input {
   text-align: center;
   margin-top: 20px;
 }
 
+.banner {
+  border: 1px solid red;
+  /* background-image: linear-gradient(to bottom right, aquamarine, blue); */
+  height: 100px;
+  padding-top: 15px;
+}
+
+.search-results {
+  margin: auto;
+  margin: 20px;
+  border: 5px solid green;
+}
+
 .lyrics {
   text-align: left;
+  margin: 20px;
 }
 
 h1 {
