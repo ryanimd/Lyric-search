@@ -1,15 +1,15 @@
 $(() => { //Window Onload Begin
-  $('.button').on('click', (event) => {
+  $('form').on('submit', (event) => {
 //Prevent refresh on button click
     event.preventDefault()
-    const userArtist = $('#user-artist').val()
-    const userSong = $('#user-song').val()
-
-
+    $('.search-results').empty()
 
 //Global Variables
+    const userArtist = $('#user-artist').val()
+    const userSong = $('#user-song').val()
     let artist = userArtist
     let song = userSong
+
 
     $.ajax({
       url: `https://api.lyrics.ovh/v1/${artist}/${song}`
@@ -17,10 +17,12 @@ $(() => { //Window Onload Begin
       (data) => {
         console.log(data);
 
-        // for (let i = 0; i < 15; i++){
-        //   const $lyrics = $('<div>').addClass('lyrics').text(data.lyrics)
-        //   $('.search-results').append($lyrics)
-        // }
+        for (let i = 0; i < 1; i++){
+          const $lyrics = $('<div>').addClass('lyrics').text(data.lyrics)
+          $('.search-results').append($lyrics)
+          // const $h1 = $('<h1>')
+          // $('.search-results').append($h1).text(userArtist)
+        }
     // })
       },
       () => {
