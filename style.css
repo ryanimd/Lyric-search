@@ -1,0 +1,17 @@
+.banner {
+  text-align: center;
+}
+
+.search-results {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.lyrics {
+  text-align: left;
+}
+
+h1 {
+  text-transform: capitalize;
+  text-align: center;
+}
