@@ -4,20 +4,29 @@ $(() => { //Window Onload Begin
     event.preventDefault()
 
 //Global Variables
-    const $userInput = $('input[type="text"]').val()//Input should be song title
-    const $trackID = $(event.target).val()//Searches for track id that corresponds to user input
+    const $userArtist = $('input[type="text"]').val()//Input should be song artist name
+    const $userSong = $('input[type="text"]').val()//Input should be song name
+    //
 
     $.ajax({
-      url:`http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOPtrack.lyrics.get?track_id=${$trackID}`,
+      url: `https://api.lyrics.ovh/suggest/${$userArtist}`,
       data: {
-        "$limit": $userInput,}
+        "$limit": $userArtist,}
     }).then(
-      (lyrics) => {
-        console.log(lyrics);
+      (data) => {
+        console.log(data);
+
+        for(let i = 0; i < 15; i++){
+          const $lyrics = $("<div>").addClass('lyrics').text(data.data[i].title)
+          $('.search-results').append($lyrics)
+}
       },
       () => {
           console.log('bad request');
       }
     )
   })
+
 })//Window Onload End
+
+//////////////// Failed Attempts /////////////////////////
