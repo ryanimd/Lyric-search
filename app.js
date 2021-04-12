@@ -8,8 +8,8 @@ $(() => { //Window Onload Begin
 
 
 //Global Variables
-    let artist = 'Prince'
-    let song = 'When Doves Cry'
+    let artist = userArtist
+    let song = userSong
 
     $.ajax({
       url: `https://api.lyrics.ovh/v1/${artist}/${song}`
