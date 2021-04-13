@@ -14,8 +14,8 @@ $(() => { //Window Onload Begin
     }).then(
       (data) => {
         console.log(data);
-        for (let i = 0; i < 1; i++){                                     //Adds line breaks
-          const $lyrics = $('<div>').addClass('lyrics').text(data.lyrics.replace(/\n/, '\n'))
+        for (let i = 0; i < 1; i++){                                     
+          const $lyrics = $('<div>').addClass('lyrics').text(data.lyrics)
           $('.search-results').append($lyrics)
           const $h1 = $('<h1>')
           $h1.text(`${artist} - ${song}`)
