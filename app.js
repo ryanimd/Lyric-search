@@ -27,7 +27,7 @@ $(() => { //Window Onload Begin
       }
     )
     $.ajax({
-      url: `http://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=${myKey}&artist=${artist}&track=${song}&format=json`
+      url: `https://ws.audioscrobbler.com/2.0/?method=track.getinfo&api_key=${myKey}&artist=${artist}&track=${song}&format=json`
     }).then(
       (data) => {
         console.log(data);
