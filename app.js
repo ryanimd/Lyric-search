@@ -32,16 +32,25 @@ $(() => { //Window Onload Begin
       (data) => {
         console.log(data);
         for (let i = 0; i < 1; i++){
-          // const $albumBox = $('<div>').addClass('album-box')
-          const albumObject = data.track.album.image[1].text
-
-          const $albumArt = $('<img>').attr('src', 'albumObject')
-          $('.search-results').append($albumArt)
-          // $albumArt.append($albumBox)
-          const $albumTitle = $('<h2>')
-          const $releaseYear = $('<h3>')
-          $albumTitle.append($releaseYear)
+          const $albumSum = $('<div>').addClass('album-summary').text(data.track.wiki.summary)
+          $('#info-box').append($albumSum)
         }
+          //Modal Variables
+          const $openInfo = $('#open-info')
+          const $modal = $('#modal')
+          const $closeInfo = $('#close')
+
+          //Functions for modal
+          const openModal = () => {
+            $modal.css('display', 'block')
+          }
+          const closeModal = () => {
+            $modal.css('display', 'none')
+          }
+
+          //Event listeners for modal
+          $openInfo.on('click', openModal)
+          $closeInfo.on('click', closeModal)
       },
       () => {
           console.log('bad request');
@@ -49,7 +58,3 @@ $(() => { //Window Onload Begin
     )
   })
 })//Window Onload End
-
-// .text(data.track.track.album.image[1])
-// API key	9d94ae7b2820471546bd0a910075c32a
-// Shared secret	8a06340eb4d236555629287e7d826f0d
