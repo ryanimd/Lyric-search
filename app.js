@@ -18,7 +18,7 @@ $(() => { //Window Onload Begin
           const $lyrics = $('<div>').addClass('lyrics').text(data.lyrics)
           $('.search-results').append($lyrics)
           const $h1 = $('<h1>')
-          $h1.text(`${artist} - ${song}`)
+          $h1.text(`${artist} - "${song}"`)
           $('.lyrics').prepend($h1)
         }
       },
@@ -51,6 +51,10 @@ $(() => { //Window Onload Begin
           //Event listeners for modal
           $openInfo.on('click', openModal)
           $closeInfo.on('click', closeModal)
+
+          $('#close').on('click', () => {
+            $('.album-summary').empty()
+          })
       },
       () => {
           console.log('bad request');
