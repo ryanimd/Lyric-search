@@ -8,7 +8,6 @@ $(() => { //Window Onload Begin
 //Global Variables
     const artist = $('#user-artist').val()
     const song = $('#user-song').val()
-    const myKey = '9d94ae7b2820471546bd0a910075c32a'
 
     $.ajax({
       url: `https://api.lyrics.ovh/v1/${artist}/${song}`
